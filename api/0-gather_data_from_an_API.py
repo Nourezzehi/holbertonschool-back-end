@@ -9,7 +9,8 @@ from sys import argv
 
 if __name__ == '__main__':
     main_url = 'https://jsonplaceholder.typicode.com'
-    todos_url = main_url + "/user/{}/todos".format(argv[1])
+
+    todos_url = main_url + "/todos?userId={}".format(argv[1])
     employee_url = main_url + "/users/{}".format(argv[1])
 
     todos_result = requests.get(todos_url).json()
